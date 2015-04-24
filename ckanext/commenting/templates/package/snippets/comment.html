@@ -1,1 +1,40 @@
-<div>This is a test block</div>
+<section class="comment">
+<h3>Comments</h3>
+
+
+<ul class="media-list">
+  <li class="media">
+    <a class="pull-left" href="#">
+      <img class="media-object" src="" alt="">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">
+        place holder
+      </h4>
+      <div class="media">
+        <form action="/package/comment_create" method="post" accept-charset="utf-8">
+          <textarea name="message" rows="3" class="input-block-level" placeholder="Write some comment here..."></textarea>
+          <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </li>
+  {% for comment in pkg_dict.comments %}
+  <li class="media">
+    <a class="pull-left" href="#">
+      <img class="media-object" src="{{ comment.author.image }}" alt="">
+    </a>
+    <div class="media-body">
+      <div class="media-heading">
+        {{ comment.author.display_name }}
+      </div>
+      <div class="media">
+        {{ comment.message }} <br>
+         - {{ comment.timestamp }}
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+</section>
