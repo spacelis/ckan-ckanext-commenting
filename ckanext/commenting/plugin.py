@@ -15,7 +15,6 @@ class CommentingPlugin(p.SingletonPlugin):
     def get_actions(self):
         actions = {'comment_create': action.comment_create,
                    'comment_delete': action.comment_delete,
-                   'comment_get': action.comment_get,
                    'comment_show': action.comment_show,
                   }
         return actions
